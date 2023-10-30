@@ -1,4 +1,4 @@
-// const { default: test } = require("node:test");
+// Jest test
 
 const ex = require("./ex");
 
