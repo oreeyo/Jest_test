@@ -1,20 +1,39 @@
 // DeepCopy Test
+/*
+Given-When-Then 패턴
+ 각 테스트 케이스에서 "Given"은 초기 상태 또는 입력을 설정하고, 
+ "When"은 작업 또는 동작을 수행하며, 
+ "Then"은 예상 결과를 확인함.
+*/
 
 const copyObject = require("./deepcopy");
 
 describe('deepCopy Suite', () => {
     test("원시자료형 테스트", () => {
+        // given
         const original = 95;
+        // when
         const copied = copyObject(original);
+        // then
         expect(copied).toBe(original);
     });
 
     test("null 테스트", () => {
-        expect(copyObject(null)).toBeNull()
+        // given
+        const original = null;
+        // when
+        const copied = copyObject(original);
+        // then
+        expect(copied).toBeNull();
     })
 
     test("undefined", () => {
-        expect(copyObject(undefined)).toBeUndefined()
+        // given
+        const original = undefined;
+        // when
+        const copied = copyObject(original);
+        // then
+        expect(copied).toBeUndefined()
     })
 
     test("Date Obj test", () => {
